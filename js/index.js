@@ -5,7 +5,7 @@ i = 0;
 var nextImage = function() {
   i++;
   if(i === images.length) {
-    window.location.replace('/graphs.html');
+    window.location.replace('graphs.html');
   } else {
     $('#image').attr('src', 'img/' + images[i]);
   }
