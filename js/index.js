@@ -5,7 +5,7 @@ i = 0;
 var nextImage = function() {
   i++;
   if(i === images.length) {
-    window.location.replace('graphs.html');
+    window.location.replace('thanks.html');
   } else {
     $('#image').attr('src', 'img/' + images[i]);
   }
@@ -16,37 +16,11 @@ var nextDescription = function() {
 };
 
 $('#yes').on('click', function() {
-  $.ajax({
-      type: 'POST',
-      url: 'http://bhallasaurabh.com/add',
-      data: {
-        image: i,
-        result: 1
-      },
-      crossDomain: true,
-      dataType: 'json',
-      success: function(data) {
-        console.log(data);
-        nextImage();
-        nextDescription();
-      }
-  });
+  nextImage();
+  nextDescription();
 });
 
 $('#no').on('click', function() {
-  $.ajax({
-      type: 'POST',
-      url: 'http://bhallasaurabh.com/add',
-      data: {
-        image: i,
-        result: 1
-      },
-      crossDomain: true,
-      dataType: 'jsonp',
-      success: function(data) {
-        console.log(data);
-        nextImage();
-        nextDescription();
-      }
-  });
+  nextImage();
+  nextDescription();
 });
